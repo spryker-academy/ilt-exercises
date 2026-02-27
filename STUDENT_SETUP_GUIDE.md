@@ -14,7 +14,13 @@ git clone git@github.com:spryker-academy/ilt-exercises.git
 cd ilt-exercises
 ```
 
-## Step 2: Boot the Docker Environment
+## Step 2: Clone the Docker SDK
+
+```bash
+git clone --single-branch https://github.com/spryker/docker-sdk docker
+```
+
+## Step 3: Boot the Docker Environment
 
 ```bash
 docker/sdk boot deploy.dev.yml

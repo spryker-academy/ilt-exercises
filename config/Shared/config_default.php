@@ -1105,3 +1105,7 @@ $config[AlgoliaConstants::APPLICATION_ID] = getenv('ALGOLIA_APPLICATION_ID');
 $config[AlgoliaConstants::ADMIN_API_KEY] = getenv('ALGOLIA_WRITE_API_KEY');
 $config[AlgoliaConstants::SEARCH_ONLY_API_KEY] = getenv('ALGOLIA_SEARCH_API_KEY');
 $config[AlgoliaConstants::IS_ACTIVE] = $config[AlgoliaConstants::APPLICATION_ID] && $config[AlgoliaConstants::ADMIN_API_KEY] && $config[AlgoliaConstants::SEARCH_ONLY_API_KEY];
+
+if (file_exists(__DIR__ . '/config_ai.php')) {
+    require __DIR__ . '/config_ai.php';
+}

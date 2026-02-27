@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(composer show:*)",
+      "Bash(composer update:*)",
+      "Bash(git:*)",
+      "Bash(do echo:*)",
+      "Bash(composer require:*)",
+      "Bash(git checkout:*)"
+    ]
+  }
+}

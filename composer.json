@@ -1,9 +1,9 @@
 {
-    "name": "spryker-shop/b2b-demo-marketplace",
-    "description": "Spryker B2B Marketplace Demo Shop",
+    "name": "spryker-academy/ilt-exercises",
+    "description": "Spryker B2B Marketplace Demo Shop for ILT",
     "license": "proprietary",
     "require": {
-        "php": ">=8.3",
+        "php": ">=8.4",
         "ext-bcmath": "*",
         "ext-curl": "*",
         "ext-gd": "*",
@@ -15,7 +15,6 @@
         "ext-readline": "*",
         "ext-redis": "*",
         "galbar/jsonpath": "^1.3.1",
-        "spryker-academy/hello-world": "dev-ilt/202512.0/basics/hello-world-back-office/skeleton",
         "spryker-eco/algolia": "^1.0.1",
         "spryker-eco/loggly": "^0.1.1",
         "spryker-eco/new-relic": "^2.0.1",
@@ -139,6 +138,7 @@
         "spryker/agent-dashboard-merchant-portal-gui": "^2.0.0",
         "spryker/agent-security-blocker-merchant-portal-gui": "^1.1.0",
         "spryker/agent-security-merchant-portal-gui": "^2.0.0",
+        "spryker/ai-foundation": "^0.4.1",
         "spryker/alternative-products-rest-api": "^1.2.0",
         "spryker/api-key-authorization-connector": "^1.1.0",
         "spryker/api-platform": "^0.5.4",
@@ -439,14 +439,7 @@
         }
     },
     "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/spryker-academy/hello-world.git"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/spryker-academy/supplier.git"
-        },
+        
         {
             "type": "git",
             "url": "https://github.com/spryker/robotframework-suite-tests.git"

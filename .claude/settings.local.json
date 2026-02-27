@@ -6,7 +6,9 @@
       "Bash(git:*)",
       "Bash(do echo:*)",
       "Bash(composer require:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(gh repo:*)",
+      "Bash(docker/sdk cli:*)"
     ]
   }
 }

@@ -4,8 +4,6 @@
 
 - Docker Desktop installed and running
 - Git installed
-- Composer 2.x installed
-- GitHub access to the exercise repositories
 
 ---
 
@@ -25,13 +23,22 @@ docker/sdk up
 
 Wait for all services to be ready. This may take several minutes on first run.
 
-## Step 3: Enter the Docker CLI
+## Step 3: Register Exercise Packages
 
-All `composer` and `console` commands below should be run **inside the Docker CLI**:
+Enter the Docker CLI and register the exercise package repositories:
 
 ```bash
 docker/sdk cli
 ```
+
+Then run these two commands inside the CLI:
+
+```bash
+composer config repositories.hello-world git https://github.com/spryker-academy/hello-world.git
+composer config repositories.supplier git https://github.com/spryker-academy/supplier.git
+```
+
+You only need to do this **once** per project setup.
 
 ---
 
@@ -48,6 +55,8 @@ There are two packages:
 |---------|--------|
 | `spryker-academy/hello-world` | Modules 1-4 (Basics) |
 | `spryker-academy/supplier` | Modules 4-11 (Basics + Intermediate) |
+
+All `composer` and `console` commands should be run **inside the Docker CLI** (`docker/sdk cli`).
 
 ---
 
@@ -92,7 +101,6 @@ composer require "spryker-academy/hello-world:dev-ilt/202512.0/basics/data-trans
 After modifying transfer XML files, generate transfers:
 
 ```bash
-docker/sdk cli
 console transfer:generate
 ```
 
@@ -115,7 +123,6 @@ composer require "spryker-academy/hello-world:dev-ilt/202512.0/basics/message-ta
 After modifying schema XML files, run:
 
 ```bash
-docker/sdk cli
 console propel:install
 console transfer:generate
 ```
@@ -151,7 +158,6 @@ Your task: Define the Propel database schema for supplier tables.
 After modifying schema XML files:
 
 ```bash
-docker/sdk cli
 console propel:install
 console transfer:generate
 ```
@@ -193,7 +199,6 @@ composer require "spryker-academy/supplier:dev-ilt/202512.0/intermediate/data-im
 After implementing, run the import:
 
 ```bash
-docker/sdk cli
 console data:import
 ```
 
@@ -216,7 +221,6 @@ composer require "spryker-academy/supplier:dev-ilt/202512.0/intermediate/publish
 After implementing:
 
 ```bash
-docker/sdk cli
 console event:trigger
 console queue:worker:start
 ```
@@ -272,7 +276,6 @@ composer require "spryker-academy/supplier:dev-ilt/202512.0/intermediate/glue-st
 After implementing:
 
 ```bash
-docker/sdk cli
 console glue-api:controller:cache:warm-up
 ```
 
@@ -312,47 +315,29 @@ Run these inside `docker/sdk cli`:
 
 ## Switching Between Exercises
 
-When moving to the next exercise, simply run the corresponding `composer require` command. Composer will replace the package contents with the new version automatically.
+When moving to the next exercise, simply run the corresponding `composer require` command inside `docker/sdk cli`. Composer will replace the package contents with the new version automatically.
 
 If you need to start an exercise fresh, re-run the skeleton `composer require` command.
 
 ## Troubleshooting
 
 **"Package not found" error:**
-Make sure the exercise package repositories are configured in your `composer.json`:
-
-```json
-{
-    "repositories": [
-        {
-            "type": "git",
-            "url": "git@github.com:spryker-academy/hello-world.git"
-        },
-        {
-            "type": "git",
-            "url": "git@github.com:spryker-academy/supplier.git"
-        }
-    ]
-}
-```
-
-Then run:
+Make sure you ran the repository setup commands (Step 3):
 
 ```bash
-composer update --lock --ignore-platform-reqs
+composer config repositories.hello-world git https://github.com/spryker-academy/hello-world.git
+composer config repositories.supplier git https://github.com/spryker-academy/supplier.git
 ```
 
 **Transfer/Propel errors after switching versions:**
 Always regenerate after switching:
 
 ```bash
-docker/sdk cli
 console propel:install
 console transfer:generate
 ```
 
 **Cache issues:**
 ```bash
-docker/sdk cli
 console cache:empty-all
 ```

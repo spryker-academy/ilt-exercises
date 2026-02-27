@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dd4a2e380123ad93c77b7b5cb0799723",
+    "content-hash": "e73de264e02f854784de57d47da7eac5",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -9082,6 +9082,69 @@
                 "source": "https://github.com/Seldaek/signal-handler/tree/2.0.2"
             },
             "time": "2023-09-03T09:24:00+00:00"
+        },
+        {
+            "name": "spryker-academy/hello-world",
+            "version": "dev-ilt/202512.0/basics/hello-world-back-office/skeleton",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spryker-academy/hello-world.git",
+                "reference": "e76795fd3a4e450694e81bd46d81d5276454550b"
+            },
+            "require": {
+                "php": ">=8.4",
+                "spryker/gui": "^3.0.0 || ^4.0.0",
+                "spryker/kernel": "^3.0.0",
+                "spryker/propel-orm": "^1.0.0",
+                "spryker/symfony": "^3.0.0"
+            },
+            "require-dev": {
+                "spryker/code-sniffer": "*",
+                "spryker/testify": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.0.x-dev",
+                    "dev-ilt/202512.0/basics/hello-world-back-office/skeleton": "1.0-dev",
+                    "dev-ilt/202512.0/basics/hello-world-back-office/complete": "1.0.x-dev",
+                    "dev-ilt/202512.0/basics/data-transfer-object/skeleton": "2.0-dev",
+                    "dev-ilt/202512.0/basics/data-transfer-object/complete": "2.0.x-dev",
+                    "dev-ilt/202512.0/basics/message-table-schema/skeleton": "3.0-dev",
+                    "dev-ilt/202512.0/basics/message-table-schema/complete": "3.0.x-dev",
+                    "dev-ilt/202512.0/basics/module-layers/skeleton": "4.0-dev",
+                    "dev-ilt/202512.0/basics/module-layers/complete": "4.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "SprykerAcademy\\": "src/SprykerAcademy/",
+                    "Orm\\": "src/Orm/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "SprykerAcademyTest\\": "tests/SprykerAcademyTest/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Spryker Academy",
+                    "email": "academy@spryker.com"
+                }
+            ],
+            "description": "Spryker Academy HelloWorld Training Module - Learn Spryker fundamentals through progressive exercises",
+            "keywords": [
+                "hello-world",
+                "learning",
+                "spryker",
+                "training",
+                "tutorial"
+            ],
+            "time": "2026-02-27T16:12:27+00:00"
         },
         {
             "name": "spryker-eco/algolia",
@@ -91018,6 +91081,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "spryker-academy/hello-world": 20,
         "spryker/cypress-tests": 20,
         "spryker/docker-chromedriver": 20,
         "spryker/robotframework-suite-tests": 20
@@ -91041,5 +91105,5 @@
     "platform-overrides": {
         "php": "8.3.13"
     },
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.6.0"
 }

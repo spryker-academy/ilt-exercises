@@ -401,6 +401,7 @@
             "Generated\\": "src/Generated/",
             "Orm\\": "src/Orm/",
             "Pyz\\": "src/Pyz/",
+            "SprykerAcademy\\": "src/SprykerAcademy/",
             "SprykerConfig\\": "src/SprykerConfig/"
         }
     },

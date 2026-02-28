@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f9d6b726bb443a4301739780ded74465",
+    "content-hash": "cc9b7efac95714e8ec651881b521f017",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -89742,34 +89742,6 @@
             "time": "2025-03-22T00:28:17+00:00"
         },
         {
-            "name": "spryker-academy/instructor-exercises",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spryker-academy/instructor-exercises.git",
-                "reference": "c553045ddf755808ae0e30d2b4f1cda02b56e41c"
-            },
-            "require": {
-                "composer-plugin-api": "^2.0",
-                "php": ">=8.4"
-            },
-            "default-branch": true,
-            "type": "composer-plugin",
-            "extra": {
-                "class": "SprykerAcademy\\Exercises\\InstallerPlugin"
-            },
-            "autoload": {
-                "psr-4": {
-                    "SprykerAcademy\\Exercises\\": "src/"
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "description": "Exercise loader for Spryker Backend Developer Training",
-            "time": "2026-02-28T00:38:27+00:00"
-        },
-        {
             "name": "spryker-feature/development-tools",
             "version": "202602.0",
             "source": {
@@ -91157,7 +91129,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "spryker-academy/instructor-exercises": 20,
         "spryker/cypress-tests": 20,
         "spryker/docker-chromedriver": 20,
         "spryker/robotframework-suite-tests": 20

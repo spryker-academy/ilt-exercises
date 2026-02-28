@@ -30,9 +30,8 @@ GTAGS
 config/accumulated-config.json
 
 /src/Generated/
-/src/SprykerAcademy/
 /vendor/
-/exercises/repos/
+/exercises/
 FOSS.md
 /public/*/maintenance/maintenance.marker
 

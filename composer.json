@@ -371,6 +371,7 @@
         "phpstan/phpdoc-parser": "^1.33",
         "phpstan/phpstan": "2.1.39",
         "phpunit/phpunit": "^12.5.14",
+        "spryker-academy/instructor-exercises": "dev-main",
         "spryker-feature/development-tools": "^202602.0",
         "spryker-sdk/ai-dev": "^0.2.2",
         "spryker-sdk/evaluator": "^0.3.4",
@@ -435,11 +436,15 @@
             "symfony/flex": true,
             "symfony/runtime": true,
             "tbachert/spi": true,
-            "spryker/composer-autoload-plugin": true
+            "spryker/composer-autoload-plugin": true,
+            "spryker-academy/instructor-exercises": true
         }
     },
     "repositories": [
-
+        {
+            "type": "git",
+            "url": "https://github.com/spryker-academy/instructor-exercises.git"
+        },
         {
             "type": "git",
             "url": "https://github.com/spryker/robotframework-suite-tests.git"

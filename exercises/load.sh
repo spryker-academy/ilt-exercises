@@ -125,25 +125,6 @@ if [ "$PACKAGE" = "supplier" ]; then
     [ -f "$REPO_DIR/data/import/supplier_location.csv" ] && cp "$REPO_DIR/data/import/supplier_location.csv" "$PROJECT_DIR/data/import/supplier_location.csv"
 fi
 
-# One-time setup: add SprykerAcademy to autoload if not present
-if ! grep -q '"SprykerAcademy\\\\": "src/SprykerAcademy/"' "$PROJECT_DIR/composer.json"; then
-    echo -e "${YELLOW}Adding SprykerAcademy namespace to composer autoload...${NC}"
-    sed -i.bak '/"Pyz\\\\": "src\/Pyz\/"/a\
-            "SprykerAcademy\\\\": "src/SprykerAcademy/",' "$PROJECT_DIR/composer.json"
-    rm -f "$PROJECT_DIR/composer.json.bak"
-fi
-
-# One-time setup: add SprykerAcademy to PROJECT_NAMESPACES if not present
-if ! grep -q "'SprykerAcademy'" "$PROJECT_DIR/config/Shared/config_default.php"; then
-    echo -e "${YELLOW}Adding SprykerAcademy to PROJECT_NAMESPACES in config_default.php...${NC}"
-    sed -i.bak "s/\$config\[KernelConstants::PROJECT_NAMESPACES\] = \[/\$config[KernelConstants::PROJECT_NAMESPACES] = [\n    'SprykerAcademy',/" "$PROJECT_DIR/config/Shared/config_default.php"
-    rm -f "$PROJECT_DIR/config/Shared/config_default.php.bak"
-
-    # Also add to Glue Backend namespaces
-    sed -i.bak "s/\$config\[GlueBackendApiApplicationConstants::PROJECT_NAMESPACES\] = \[/\$config[GlueBackendApiApplicationConstants::PROJECT_NAMESPACES] = [\n    'SprykerAcademy',/" "$PROJECT_DIR/config/Shared/config_default.php"
-    rm -f "$PROJECT_DIR/config/Shared/config_default.php.bak"
-fi
-
 # Count files
 FILE_COUNT=$(find "$PROJECT_DIR/src/SprykerAcademy" -type f 2>/dev/null | wc -l | tr -d ' ')
 

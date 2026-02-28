@@ -56,7 +56,7 @@ console propel:install
 #### Module 1: Hello World Back Office
 
 ```bash
-./exercises/load.sh hello-world ilt/202512.0/basics/hello-world-back-office/skeleton
+./exercises/load.sh hello-world basics/hello-world-back-office/skeleton
 ```
 
 Your task: Implement a Zed controller and Twig template to display a "Hello World" page in the Back Office.
@@ -66,7 +66,7 @@ Files to work on: `src/SprykerAcademy/Zed/HelloWorld/`
 Check the solution:
 
 ```bash
-./exercises/load.sh hello-world ilt/202512.0/basics/hello-world-back-office/complete
+./exercises/load.sh hello-world basics/hello-world-back-office/complete
 ```
 
 ---
@@ -74,7 +74,7 @@ Check the solution:
 #### Module 2: Data Transfer Objects
 
 ```bash
-./exercises/load.sh hello-world ilt/202512.0/basics/data-transfer-object/skeleton
+./exercises/load.sh hello-world basics/data-transfer-object/skeleton
 ```
 
 Your task: Define transfer objects for the HelloWorld module.
@@ -88,7 +88,7 @@ console transfer:generate
 Check the solution:
 
 ```bash
-./exercises/load.sh hello-world ilt/202512.0/basics/data-transfer-object/complete
+./exercises/load.sh hello-world basics/data-transfer-object/complete
 ```
 
 ---
@@ -96,7 +96,7 @@ Check the solution:
 #### Module 3: Message Table Schema
 
 ```bash
-./exercises/load.sh hello-world ilt/202512.0/basics/message-table-schema/skeleton
+./exercises/load.sh hello-world basics/message-table-schema/skeleton
 ```
 
 Your task: Define the Propel database schema for the message table.
@@ -111,7 +111,7 @@ console transfer:generate
 Check the solution:
 
 ```bash
-./exercises/load.sh hello-world ilt/202512.0/basics/message-table-schema/complete
+./exercises/load.sh hello-world basics/message-table-schema/complete
 ```
 
 ---
@@ -119,7 +119,7 @@ Check the solution:
 #### Module 4: Module Layers
 
 ```bash
-./exercises/load.sh hello-world ilt/202512.0/basics/module-layers/skeleton
+./exercises/load.sh hello-world basics/module-layers/skeleton
 ```
 
 Your task: Implement the full module layer architecture (Business, Persistence, Communication, Client, Yves).
@@ -127,7 +127,7 @@ Your task: Implement the full module layer architecture (Business, Persistence, 
 Check the solution:
 
 ```bash
-./exercises/load.sh hello-world ilt/202512.0/basics/module-layers/complete
+./exercises/load.sh hello-world basics/module-layers/complete
 ```
 
 ---
@@ -137,7 +137,7 @@ Check the solution:
 #### Module 4b: Supplier Table Schema
 
 ```bash
-./exercises/load.sh supplier ilt/202512.0/basics/supplier-table-schema/skeleton
+./exercises/load.sh supplier basics/supplier-table-schema/skeleton
 ```
 
 Your task: Define the Propel database schema for supplier tables.
@@ -156,7 +156,7 @@ console transfer:generate
 #### Module 6: Back Office (CRUD)
 
 ```bash
-./exercises/load.sh supplier ilt/202512.0/intermediate/back-office/skeleton
+./exercises/load.sh supplier intermediate/back-office/skeleton
 ```
 
 Your task: Build the Back Office GUI for managing suppliers (list, create, edit, delete).
@@ -164,7 +164,7 @@ Your task: Build the Back Office GUI for managing suppliers (list, create, edit,
 Check the solution:
 
 ```bash
-./exercises/load.sh supplier ilt/202512.0/intermediate/back-office/complete
+./exercises/load.sh supplier intermediate/back-office/complete
 ```
 
 ---
@@ -172,7 +172,7 @@ Check the solution:
 #### Module 7: Data Import
 
 ```bash
-./exercises/load.sh supplier ilt/202512.0/intermediate/data-import/skeleton
+./exercises/load.sh supplier intermediate/data-import/skeleton
 ```
 
 Your task: Implement data importers for suppliers and supplier locations.
@@ -186,7 +186,7 @@ console data:import
 Check the solution:
 
 ```bash
-./exercises/load.sh supplier ilt/202512.0/intermediate/data-import/complete
+./exercises/load.sh supplier intermediate/data-import/complete
 ```
 
 ---
@@ -194,7 +194,7 @@ Check the solution:
 #### Module 8: Publish & Synchronize
 
 ```bash
-./exercises/load.sh supplier ilt/202512.0/intermediate/publish-synchronize/skeleton
+./exercises/load.sh supplier intermediate/publish-synchronize/skeleton
 ```
 
 Your task: Implement event publishing and synchronization for supplier data to storage/search.
@@ -209,7 +209,7 @@ console queue:worker:start
 Check the solution:
 
 ```bash
-./exercises/load.sh supplier ilt/202512.0/intermediate/publish-synchronize/complete
+./exercises/load.sh supplier intermediate/publish-synchronize/complete
 ```
 
 ---
@@ -217,7 +217,7 @@ Check the solution:
 #### Module 9: Search
 
 ```bash
-./exercises/load.sh supplier ilt/202512.0/intermediate/search/skeleton
+./exercises/load.sh supplier intermediate/search/skeleton
 ```
 
 Your task: Implement Elasticsearch integration for supplier search.
@@ -225,7 +225,7 @@ Your task: Implement Elasticsearch integration for supplier search.
 Check the solution:
 
 ```bash
-./exercises/load.sh supplier ilt/202512.0/intermediate/search/complete
+./exercises/load.sh supplier intermediate/search/complete
 ```
 
 ---
@@ -233,7 +233,7 @@ Check the solution:
 #### Module: Storage Client
 
 ```bash
-./exercises/load.sh supplier ilt/202512.0/intermediate/storage-client/skeleton
+./exercises/load.sh supplier intermediate/storage-client/skeleton
 ```
 
 Your task: Implement the Client layer to read supplier data from Redis storage.
@@ -241,7 +241,7 @@ Your task: Implement the Client layer to read supplier data from Redis storage.
 Check the solution:
 
 ```bash
-./exercises/load.sh supplier ilt/202512.0/intermediate/storage-client/complete
+./exercises/load.sh supplier intermediate/storage-client/complete
 ```
 
 ---
@@ -249,7 +249,7 @@ Check the solution:
 #### Module 10: Glue Storefront API
 
 ```bash
-./exercises/load.sh supplier ilt/202512.0/intermediate/glue-storefront/skeleton
+./exercises/load.sh supplier intermediate/glue-storefront/skeleton
 ```
 
 Your task: Build a Glue API resource for exposing supplier data to storefront applications.
@@ -263,7 +263,7 @@ console glue-api:controller:cache:warm-up
 Check the solution:
 
 ```bash
-./exercises/load.sh supplier ilt/202512.0/intermediate/glue-storefront/complete
+./exercises/load.sh supplier intermediate/glue-storefront/complete
 ```
 
 ---
@@ -271,7 +271,7 @@ Check the solution:
 #### Module 11: Order Management System (OMS)
 
 ```bash
-./exercises/load.sh supplier ilt/202512.0/intermediate/oms/skeleton
+./exercises/load.sh supplier intermediate/oms/skeleton
 ```
 
 Your task: Define OMS states, transitions, events, conditions, and commands in `config/Zed/oms/Demo01.xml` and implement the OMS plugins.
@@ -279,7 +279,7 @@ Your task: Define OMS states, transitions, events, conditions, and commands in `
 Check the solution:
 
 ```bash
-./exercises/load.sh supplier ilt/202512.0/intermediate/oms/complete
+./exercises/load.sh supplier intermediate/oms/complete
 ```
 
 ---

@@ -6,8 +6,8 @@
 #   ./exercises/load.sh <package> <branch>
 #
 # Examples:
-#   ./exercises/load.sh hello-world ilt/202512.0/basics/hello-world-back-office/skeleton
-#   ./exercises/load.sh supplier ilt/202512.0/intermediate/back-office/skeleton
+#   ./exercises/load.sh hello-world basics/hello-world-back-office/skeleton
+#   ./exercises/load.sh supplier intermediate/back-office/skeleton
 #
 # First run will clone the repos and configure the project automatically.
 #
@@ -33,31 +33,31 @@ usage() {
     echo "Packages: hello-world, supplier"
     echo ""
     echo "Hello World branches:"
-    echo "  ilt/202512.0/basics/hello-world-back-office/skeleton"
-    echo "  ilt/202512.0/basics/hello-world-back-office/complete"
-    echo "  ilt/202512.0/basics/data-transfer-object/skeleton"
-    echo "  ilt/202512.0/basics/data-transfer-object/complete"
-    echo "  ilt/202512.0/basics/message-table-schema/skeleton"
-    echo "  ilt/202512.0/basics/message-table-schema/complete"
-    echo "  ilt/202512.0/basics/module-layers/skeleton"
-    echo "  ilt/202512.0/basics/module-layers/complete"
+    echo "  basics/hello-world-back-office/skeleton"
+    echo "  basics/hello-world-back-office/complete"
+    echo "  basics/data-transfer-object/skeleton"
+    echo "  basics/data-transfer-object/complete"
+    echo "  basics/message-table-schema/skeleton"
+    echo "  basics/message-table-schema/complete"
+    echo "  basics/module-layers/skeleton"
+    echo "  basics/module-layers/complete"
     echo ""
     echo "Supplier branches:"
-    echo "  ilt/202512.0/basics/supplier-table-schema/skeleton"
-    echo "  ilt/202512.0/intermediate/back-office/skeleton"
-    echo "  ilt/202512.0/intermediate/back-office/complete"
-    echo "  ilt/202512.0/intermediate/data-import/skeleton"
-    echo "  ilt/202512.0/intermediate/data-import/complete"
-    echo "  ilt/202512.0/intermediate/publish-synchronize/skeleton"
-    echo "  ilt/202512.0/intermediate/publish-synchronize/complete"
-    echo "  ilt/202512.0/intermediate/search/skeleton"
-    echo "  ilt/202512.0/intermediate/search/complete"
-    echo "  ilt/202512.0/intermediate/storage-client/skeleton"
-    echo "  ilt/202512.0/intermediate/storage-client/complete"
-    echo "  ilt/202512.0/intermediate/glue-storefront/skeleton"
-    echo "  ilt/202512.0/intermediate/glue-storefront/complete"
-    echo "  ilt/202512.0/intermediate/oms/skeleton"
-    echo "  ilt/202512.0/intermediate/oms/complete"
+    echo "  basics/supplier-table-schema/skeleton"
+    echo "  intermediate/back-office/skeleton"
+    echo "  intermediate/back-office/complete"
+    echo "  intermediate/data-import/skeleton"
+    echo "  intermediate/data-import/complete"
+    echo "  intermediate/publish-synchronize/skeleton"
+    echo "  intermediate/publish-synchronize/complete"
+    echo "  intermediate/search/skeleton"
+    echo "  intermediate/search/complete"
+    echo "  intermediate/storage-client/skeleton"
+    echo "  intermediate/storage-client/complete"
+    echo "  intermediate/glue-storefront/skeleton"
+    echo "  intermediate/glue-storefront/complete"
+    echo "  intermediate/oms/skeleton"
+    echo "  intermediate/oms/complete"
     exit 1
 }
 

@@ -70,6 +70,9 @@ use Spryker\Zed\Synchronization\Communication\Plugin\Queue\SynchronizationSearch
 use Spryker\Zed\Synchronization\Communication\Plugin\Queue\SynchronizationStorageQueueMessageProcessorPlugin;
 use SprykerEco\Zed\Loggly\Communication\Plugin\LogglyLoggerQueueMessageProcessorPlugin;
 
+use SprykerAcademy\Shared\SupplierSearch\SupplierSearchConfig;
+use SprykerAcademy\Shared\SupplierStorage\SupplierStorageConfig;
+
 class QueueDependencyProvider extends SprykerDependencyProvider
 {
     /**
@@ -80,6 +83,10 @@ class QueueDependencyProvider extends SprykerDependencyProvider
     protected function getProcessorMessagePlugins(Container $container): array // phpcs:ignore SlevomatCodingStandard.Functions.UnusedParameter
     {
         return [
+            SupplierSearchConfig::SUPPLIER_PUBLISH_SEARCH_QUEUE => new EventQueueMessageProcessorPlugin(),
+            SupplierStorageConfig::SUPPLIER_PUBLISH_STORAGE_QUEUE => new EventQueueMessageProcessorPlugin(),
+            SupplierSearchConfig::SUPPLIER_SYNC_SEARCH_QUEUE => new SynchronizationSearchQueueMessageProcessorPlugin(),
+            SupplierStorageConfig::SUPPLIER_SYNC_STORAGE_QUEUE => new SynchronizationStorageQueueMessageProcessorPlugin(),
             EventConstants::EVENT_QUEUE => new EventQueueMessageProcessorPlugin(),
             EventConstants::EVENT_QUEUE_RETRY => new EventRetryQueueMessageProcessorPlugin(),
             PublisherConfig::PUBLISH_QUEUE => new EventQueueMessageProcessorPlugin(),

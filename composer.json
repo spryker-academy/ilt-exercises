@@ -407,7 +407,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "PyzTest\\": "tests/PyzTest/"
+            "PyzTest\\": "tests/PyzTest/",
+            "SprykerAcademyTest\\\\": "tests/SprykerAcademyTest/"
         },
         "files": [
             "test-autoload.php"
@@ -422,7 +423,9 @@
         },
         "use-include-path": true,
         "sort-packages": true,
-        "github-protocols": ["https"],
+        "github-protocols": [
+            "https"
+        ],
         "process-timeout": 900,
         "chromium-revision": 814168,
         "allow-plugins": {

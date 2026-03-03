@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<statemachine
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="spryker:oms-01"
+    xsi:schemaLocation="spryker:oms-01 http://static.spryker.com/oms-01.xsd">
+
+    <process name="Demo01" main="true">
+        <states>
+            <state name="new" reserved="true" display="oms.state.new"/>
+            <state name="payment pending" reserved="true" display="oms.state.payment-pending"/>
+            <state name="invalid" display="oms.state.invalid"/>
+            <state name="payment authorized" reserved="true" display="oms.state.payment-authorized"/>
+            <state name="paid" reserved="true" display="oms.state.paid"/>
+            <state name="closed" display="oms.state.closed"/>
+        </states>
+
+        <transitions>
+            <transition happy="true" condition="Demo/IsAuthorized">
+                <source>new</source>
+                <target>payment pending</target>
+                <event>authorize</event>
+            </transition>
+
+            <transition>
+                <source>new</source>
+                <target>invalid</target>
+                <event>authorize</event>
+            </transition>
+
+            <transition happy="true">
+                <source>payment pending</source>
+                <target>payment authorized</target>
+                <event>pay</event>
+            </transition>
+
+            <transition happy="true">
+                <source>payment authorized</source>
+                <target>paid</target>
+            </transition>
+
+            <transition happy="true">
+                <source>paid</source>
+                <target>closed</target>
+            </transition>
+        </transitions>
+
+        <events>
+            <event name="authorize" onEnter="true" manual="true" command="Demo/Pay"/>
+            <event name="pay" onEnter="true" manual="true"/>
+        </events>
+    </process>
+</statemachine>

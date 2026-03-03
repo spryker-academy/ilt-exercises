@@ -5,7 +5,7 @@
  * For full license information, please view the LICENSE file that was distributed with this source code.
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Pyz\Client\SymfonyMessenger;
 
@@ -60,6 +60,8 @@ use Spryker\Shared\TaxProductStorage\TaxProductStorageConfig;
 use Spryker\Shared\TaxStorage\TaxStorageConfig;
 use Spryker\Shared\UrlStorage\UrlStorageConfig;
 use Spryker\Shared\UrlStorage\UrlStorageConstants;
+use SprykerAcademy\Shared\SupplierSearch\SupplierSearchConfig;
+use SprykerAcademy\Shared\SupplierStorage\SupplierStorageConfig;
 use SprykerFeature\Shared\SelfServicePortal\SelfServicePortalConfig;
 
 class SymfonyMessengerConfig extends SprykerSymfonyMessengerConfig
@@ -88,6 +90,8 @@ class SymfonyMessengerConfig extends SprykerSymfonyMessengerConfig
     protected function getPublishQueueConfiguration(): array
     {
         return [
+            SupplierSearchConfig::SUPPLIER_PUBLISH_SEARCH_QUEUE,
+            SupplierStorageConfig::SUPPLIER_PUBLISH_STORAGE_QUEUE,
             AvailabilityStorageConfig::PUBLISH_AVAILABILITY,
             CustomerStorageConfig::PUBLISH_CUSTOMER_INVALIDATED,
             MerchantStorageConfig::PUBLISH_MERCHANT,
@@ -116,6 +120,8 @@ class SymfonyMessengerConfig extends SprykerSymfonyMessengerConfig
     protected function getSynchronizationQueueConfiguration(): array
     {
         return [
+            SupplierSearchConfig::SUPPLIER_SYNC_SEARCH_QUEUE,
+            SupplierStorageConfig::SUPPLIER_SYNC_STORAGE_QUEUE,
             PublishAndSynchronizeHealthCheckSearchConfig::SYNC_SEARCH_PUBLISH_AND_SYNCHRONIZE_HEALTH_CHECK,
             PublishAndSynchronizeHealthCheckStorageConfig::SYNC_STORAGE_PUBLISH_AND_SYNCHRONIZE_HEALTH_CHECK,
             GlossaryStorageConfig::SYNC_STORAGE_TRANSLATION,

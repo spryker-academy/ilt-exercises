@@ -66,6 +66,9 @@ use Spryker\Shared\UrlStorage\UrlStorageConstants;
 /**
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
+use SprykerAcademy\Shared\SupplierSearch\SupplierSearchConfig;
+use SprykerAcademy\Shared\SupplierStorage\SupplierStorageConfig;
+
 class RabbitMqConfig extends SprykerRabbitMqConfig
 {
     /**
@@ -117,6 +120,8 @@ class RabbitMqConfig extends SprykerRabbitMqConfig
     protected function getPublishQueueConfiguration(): array
     {
         return [
+            SupplierSearchConfig::SUPPLIER_PUBLISH_SEARCH_QUEUE,
+            SupplierStorageConfig::SUPPLIER_PUBLISH_STORAGE_QUEUE,
             AvailabilityStorageConfig::PUBLISH_AVAILABILITY,
             CustomerStorageConfig::PUBLISH_CUSTOMER_INVALIDATED,
             MerchantStorageConfig::PUBLISH_MERCHANT,
@@ -145,6 +150,8 @@ class RabbitMqConfig extends SprykerRabbitMqConfig
     protected function getSynchronizationQueueConfiguration(): array
     {
         return [
+            SupplierSearchConfig::SUPPLIER_SYNC_SEARCH_QUEUE,
+            SupplierStorageConfig::SUPPLIER_SYNC_STORAGE_QUEUE,
             PublishAndSynchronizeHealthCheckSearchConfig::SYNC_SEARCH_PUBLISH_AND_SYNCHRONIZE_HEALTH_CHECK,
             PublishAndSynchronizeHealthCheckStorageConfig::SYNC_STORAGE_PUBLISH_AND_SYNCHRONIZE_HEALTH_CHECK,
             GlossaryStorageConfig::SYNC_STORAGE_TRANSLATION,

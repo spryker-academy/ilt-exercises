@@ -1,0 +1,43 @@
+namespace: SprykerAcademyTest\Zed\Supplier
+
+paths:
+    tests: .
+    data: _data
+    support: _support
+    output: _output
+
+coverage:
+    enabled: true
+    remote: false
+    whitelist: { include: ['../../../../src/*'] }
+
+suites:
+    DataImport:
+        path: DataImport
+        actor: SupplierBusinessTester
+        modules:
+            enabled:
+                - Asserts
+    BackOffice:
+        path: BackOffice
+        actor: SupplierBusinessTester
+        modules:
+            enabled:
+                - Asserts
+    PublishSync:
+        path: PublishSync
+        actor: SupplierBusinessTester
+        modules:
+            enabled:
+                - Asserts
+    Business:
+        path: Business
+        actor: SupplierBusinessTester
+        modules:
+            enabled:
+                - Asserts
+                - \PyzTest\Shared\Testify\Helper\Environment
+                - \SprykerTest\Shared\Testify\Helper\ConfigHelper
+                - \SprykerTest\Shared\Testify\Helper\DependencyHelper
+                - \SprykerTest\Shared\Testify\Helper\LocatorHelper
+                - \SprykerTest\Shared\Propel\Helper\TransactionHelper

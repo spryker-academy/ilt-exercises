@@ -143,6 +143,9 @@ use SprykerFeature\Zed\SelfServicePortal\Communication\Plugin\DataImport\SspMode
 /**
  * @package Pyz\Zed\DataImport
  */
+use SprykerAcademy\Zed\SupplierDataImport\Communication\Plugin\DataImport\SupplierDataImportPlugin;
+use SprykerAcademy\Zed\SupplierDataImport\Communication\Plugin\DataImport\SupplierLocationDataImportPlugin;
+
 class DataImportDependencyProvider extends SprykerDataImportDependencyProvider
 {
     /**
@@ -498,6 +501,10 @@ class DataImportDependencyProvider extends SprykerDataImportDependencyProvider
             new SspModelAssetDataImportPlugin(),
             new SspModelProductListDataImportPlugin(),
             new ProductAttachmentDataImportPlugin(),
+            new SupplierDataImportPlugin(),
+
+            new SupplierLocationDataImportPlugin(),
+
         ];
     }
 

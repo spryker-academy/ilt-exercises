@@ -203,6 +203,11 @@ use SprykerFeature\Zed\SelfServicePortal\Communication\Plugin\Publisher\SspModel
 use SprykerFeature\Zed\SelfServicePortal\Communication\Plugin\Publisher\SspModel\Storage\SspModelWritePublisherPlugin;
 use SprykerFeature\Zed\SelfServicePortal\Communication\Plugin\Publisher\SspModelPublisherTriggerPlugin;
 
+use SprykerAcademy\Shared\SupplierSearch\SupplierSearchConfig;
+use SprykerAcademy\Shared\SupplierStorage\SupplierStorageConfig;
+use SprykerAcademy\Zed\SupplierSearch\Communication\Plugin\Publisher\SupplierSearchWritePublisherPlugin;
+use SprykerAcademy\Zed\SupplierStorage\Communication\Plugin\Publisher\SupplierStorageWritePublisherPlugin;
+
 class PublisherDependencyProvider extends SprykerPublisherDependencyProvider
 {
     /**
@@ -211,6 +216,7 @@ class PublisherDependencyProvider extends SprykerPublisherDependencyProvider
     protected function getPublisherPlugins(): array
     {
         return array_merge(
+            $this->getSupplierPublisherPlugins(),
             $this->getPublishAndSynchronizeHealthCheckPlugins(),
             $this->getGlossaryStoragePlugins(),
             $this->getProductRelationStoragePlugins(),
@@ -856,4 +862,16 @@ class PublisherDependencyProvider extends SprykerPublisherDependencyProvider
             new ProductLabelProductUpdatedEventTriggerPlugin(),
         ];
     }
+    protected function getSupplierPublisherPlugins(): array
+    {
+        return [
+            SupplierSearchConfig::SUPPLIER_PUBLISH_SEARCH_QUEUE => [
+                new SupplierSearchWritePublisherPlugin(),
+            ],
+            SupplierStorageConfig::SUPPLIER_PUBLISH_STORAGE_QUEUE => [
+                new SupplierStorageWritePublisherPlugin(),
+            ],
+        ];
+    }
+
 }
